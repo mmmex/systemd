@@ -11,9 +11,11 @@ Systemd
 ```
 
 tail -f /var/log/messages
+
 systemctl stop watchlog.timer
 
 
 systemctl status spawn-fcgi
+
 systemctl stop spawn-fcgi
 

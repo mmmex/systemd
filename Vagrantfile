@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
     end
 
     server.vm.provision "shell", name: "Init timer service", path: "01init_service.sh"
+    server.vm.provision "shell", name: "Init timer service", path: "02init_fcgi.sh"
 
   end
 
