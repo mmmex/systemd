@@ -45,6 +45,6 @@ Unit=watchlog.service
 WantedBy=multi-user.target
 __EOF
 
-systemctl daemon-reload && systemctl enable watchlog.timer && systemctl start watchlog.timer
+systemctl daemon-reload && systemctl start watchlog.timer
 
 logger ALERT
