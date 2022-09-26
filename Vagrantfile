@@ -12,6 +12,8 @@ Vagrant.configure("2") do |config|
       vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     end
 
+    server.vm.provision "shell", name: "Init timer service", path: "01init_service.sh"
+
   end
 
 end
