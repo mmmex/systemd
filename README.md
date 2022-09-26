@@ -9,3 +9,11 @@ Systemd
 3. Дополнить unit-файл httpd (он же apache) возможностью запустить несколько инстансов сервера с разными конфигурационными файлами.
 4*. Скачать демо-версию Atlassian Jira и переписать основной скрипт запуска на unit-файл.
 ```
+
+tail -f /var/log/messages
+systemctl stop watchlog.timer
+
+
+systemctl status spawn-fcgi
+systemctl stop spawn-fcgi
+
