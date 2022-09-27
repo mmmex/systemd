@@ -12,8 +12,9 @@ Vagrant.configure("2") do |config|
       vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     end
 
-    server.vm.provision "shell", name: "Init timer service", path: "01init_service.sh"
-    server.vm.provision "shell", name: "Init timer service", path: "02init_fcgi.sh"
+    server.vm.provision "shell", name: "Init watchlog.timer service", path: "01init_service.sh"
+    server.vm.provision "shell", name: "Make spawn-fcgi as unit systemd", path: "02init_fcgi.sh"
+    server.vm.provision "shell", name: "Init httpd@first and httpd@second service", path: "03change_httpd.sh"
 
   end
 

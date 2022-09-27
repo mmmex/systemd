@@ -46,5 +46,3 @@ WantedBy=multi-user.target
 __EOF
 
 systemctl daemon-reload && systemctl start watchlog.timer
-
-logger ALERT
