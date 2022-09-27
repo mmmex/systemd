@@ -42,17 +42,20 @@ Sep 27 00:13:55 localhost.localdomain systemd[1]: Started Run watchlog script ev
 3. Открываем лог `/var/log/messages` и видим через каждые 30 секунд сообщения `I found word, Master!`: `tail -f /var/log/messages`
 
 ```shell
-[root@localhost ~]# tail -f /var/log/messages 
-Sep 27 00:29:56 localhost systemd: Started My watchlog service.
-Sep 27 00:30:26 localhost systemd: Starting My watchlog service...
-Sep 27 00:30:26 localhost root: Tue Sep 27 00:30:26 UTC 2022: I found word, Master!
-Sep 27 00:30:26 localhost systemd: Started My watchlog service.
-Sep 27 00:30:56 localhost systemd: Starting My watchlog service...
-Sep 27 00:30:56 localhost root: Tue Sep 27 00:30:56 UTC 2022: I found word, Master!
-Sep 27 00:30:56 localhost systemd: Started My watchlog service.
-Sep 27 00:31:26 localhost systemd: Starting My watchlog service...
-Sep 27 00:31:26 localhost root: Tue Sep 27 00:31:26 UTC 2022: I found word, Master!
-Sep 27 00:31:26 localhost systemd: Started My watchlog service.
+[root@localhost ~]# tail -f /var/log/messages
+Sep 27 10:44:24 localhost systemd: Removed slice User Slice of vagrant.
+Sep 27 10:44:41 localhost systemd: Starting My watchlog service...
+Sep 27 10:44:41 localhost systemd: Started My watchlog service.
+Sep 27 10:44:44 localhost systemd: Created slice User Slice of vagrant.
+Sep 27 10:44:44 localhost systemd: Started Session 4 of user vagrant.
+Sep 27 10:44:44 localhost systemd-logind: New session 4 of user vagrant.
+Sep 27 10:45:10 localhost vagrant: ALERT
+Sep 27 10:45:11 localhost systemd: Starting My watchlog service...
+Sep 27 10:45:11 localhost root: Tue Sep 27 10:45:11 UTC 2022: I found word, Master!
+Sep 27 10:45:11 localhost systemd: Started My watchlog service.
+Sep 27 10:45:41 localhost systemd: Starting My watchlog service...
+Sep 27 10:45:41 localhost root: Tue Sep 27 10:45:41 UTC 2022: I found word, Master!
+Sep 27 10:45:41 localhost systemd: Started My watchlog service.
 ```
 
 4. Останавливаем сервис: `systemctl stop watchlog.timer`
