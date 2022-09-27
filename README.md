@@ -87,7 +87,7 @@ Sep 27 10:45:41 localhost systemd: Started My watchlog service.
            ├─2617 /usr/bin/php-cgi
            ├─2618 /usr/bin/php-cgi
            ├─2619 /usr/bin/php-cgi
-           ├─2620 /usr/bin/php-cgi
+           ├─2620 /usr/bin/php-cgss -tunlp | grep httpdi
            ├─2621 /usr/bin/php-cgi
            ├─2622 /usr/bin/php-cgi
            ├─2623 /usr/bin/php-cgi
@@ -160,7 +160,7 @@ Sep 27 00:14:42 localhost.localdomain systemd[1]: Starting The Apache HTTP Serve
 Sep 27 00:14:42 localhost.localdomain systemd[1]: Started The Apache HTTP Server second.
 ```
 
-Проверим открытые порты сервисом `httpd`:
+Проверим открытые порты сервисом `httpd`: `ss -tunlp | grep httpd`
 
 ```shell
 [root@localhost ~]# ss -tunlp | grep httpd
