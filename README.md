@@ -157,4 +157,12 @@ Sep 27 00:14:42 localhost.localdomain systemd[1]: Starting The Apache HTTP Serve
 Sep 27 00:14:42 localhost.localdomain systemd[1]: Started The Apache HTTP Server second.
 ```
 
+Проверим открытые порты сервисом `httpd`:
+
+```shell
+[root@localhost ~]# ss -tunlp | grep httpd
+tcp    LISTEN     0      128    [::]:8080               [::]:*                   users:(("httpd",pid=2772,fd=4),("httpd",pid=2771,fd=4),("httpd",pid=2770,fd=4),("httpd",pid=2769,fd=4),("httpd",pid=2768,fd=4),("httpd",pid=2767,fd=4),("httpd",pid=2766,fd=4))
+tcp    LISTEN     0      128    [::]:8081               [::]:*                   users:(("httpd",pid=2780,fd=4),("httpd",pid=2779,fd=4),("httpd",pid=2778,fd=4),("httpd",pid=2777,fd=4),("httpd",pid=2776,fd=4),("httpd",pid=2775,fd=4),("httpd",pid=2774,fd=4))
+```
+
 Основное задание выполнено.
